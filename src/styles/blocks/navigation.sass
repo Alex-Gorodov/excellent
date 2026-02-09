@@ -1,0 +1,21 @@
+.navigation
+  padding-top: 30px
+  &_list
+    @include list-reset
+    display: flex
+    flex-direction: column
+    gap: 30px
+  &_item
+    &--avatar
+      opacity: 1
+  &_link
+    color: white
+    opacity: 0.5
+    text-decoration: none
+    transition: 0.3s
+    &--active
+      opacity: 1
+    &:hover
+      opacity: 0.7
+    &:active
+      opacity: 0.85

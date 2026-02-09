@@ -1,0 +1,25 @@
+.home-stats
+  @include list-reset
+  display: flex
+  padding-bottom: 30px
+  margin-bottom: 30px
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  border-bottom: 1px solid rgba(0,0,0,0.2)
+  &_item
+    display: flex
+    flex-direction: column
+    gap: 8px
+    font-size: 20px
+  &_value
+    color: $dark-gray
+  &_label
+    text-transform: uppercase
+    font-weight: 500
+    &--neutral
+      color: $orange
+    &--negative
+      color: $red
+    &--positive
+      color: $green
