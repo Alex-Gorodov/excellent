@@ -1,2 +1,38 @@
 .chart
-  background
+  overflow: hidden
+  &_top
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    @media (max-width: $mobile-width)
+      gap: 8px
+      align-items: flex-start
+      flex-direction: column
+  &_buttons
+    display: flex
+    justify-content: space-between
+    gap: 48px
+    @media (max-width: $mobile-width)
+      gap: 12px
+  &_button
+    border: none
+    background-color: transparent
+    color: $dark
+    opacity: 0.5
+    text-transform: uppercase
+    transition: 0.3s
+    cursor: pointer
+    &--active
+      opacity: 1
+    &:hover
+      opacity: 1
+
+  &_graph
+    & ul
+      display: none
+    & svg
+      margin-left: -10px
+      width: 102%
+      @media (max-width: $mobile-width)
+        margin-left: -32px

@@ -1,0 +1,26 @@
+.profile
+  display: flex
+  flex-direction: column
+  gap: 40px
+  @media (max-width: $mobile-width)
+    gap: 16px
+
+  &_top
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+  &_title
+    font-size: clamp(1rem, 0.674rem + 1.3725vw, 1.875rem)
+  &_wrapper
+    padding: 30px
+    border-radius: 10px
+    background-color: $white
+    @media (max-width: $mobile-width)
+      padding: 12px
+  &_form
+    display: grid
+    grid-template-columns: repeat(2, minmax(200px, 430px))
+    gap: 12px
+    @media (max-width: 768px)
+      grid-template-columns: 1fr

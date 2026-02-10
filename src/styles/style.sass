@@ -5,6 +5,9 @@
 @import './blocks/main'
 @import './blocks/home-stats'
 @import './blocks/chart'
+@import './blocks/input'
+@import './blocks/profile'
+@import './blocks/button'
 
 *,
 *::before,
@@ -21,10 +24,12 @@ body
   min-height: 100vh
   flex: 1
   padding: 16px 30px
-  background-color: $dark-background
+  background-color: $dark
 
   font-family: 'Roboto', 'Arial', sans-serif
   font-weight: 400
+  @media (max-width: $mobile-width)
+    padding: 8px 16px
 
 .visually-hidden
   position: absolute

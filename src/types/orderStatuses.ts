@@ -1,4 +1,4 @@
-export type CompanyStatistics = {
+export type OrderStatuses = {
   created: number | null;
   shipping: number | null;
   canceled: number | null;

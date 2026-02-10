@@ -1,7 +1,7 @@
-import { CompanyStatistics } from "../../types/companyStatistics";
+import { OrderStatuses } from "../../types/orderStatuses";
 
 interface HomePageStatsProps {
-  c: CompanyStatistics;
+  c: OrderStatuses;
 }
 
 export default function HomePageStats({c}: HomePageStatsProps) {

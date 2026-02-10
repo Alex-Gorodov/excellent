@@ -1,9 +1,9 @@
-import { CompanyStatistics } from "./companyStatistics";
+import { OrderStatuses } from "./orderStatuses";
 import { User } from "./user";
 
 export type Company = {
   id: string;
   name: string;
   customers: User[];
-  stats: CompanyStatistics;
+  stats: OrderStatuses;
 }
