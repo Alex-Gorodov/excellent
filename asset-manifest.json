@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/excellent/static/css/main.67ad312e.css",
-    "main.js": "/excellent/static/js/main.db8abfcf.js",
+    "main.css": "/excellent/static/css/main.86eec8dc.css",
+    "main.js": "/excellent/static/js/main.0beca911.js",
     "static/js/453.49da82c7.chunk.js": "/excellent/static/js/453.49da82c7.chunk.js",
     "static/media/MontserratSemiBold.ttf": "/excellent/static/media/MontserratSemiBold.bc6251227a1673656a57.ttf",
     "static/media/RobotoBold.ttf": "/excellent/static/media/RobotoBold.63311334b795ce3b76e2.ttf",
@@ -14,15 +14,16 @@
     "static/media/Excellent-title.svg": "/excellent/static/media/Excellent-title.3b6f450e444eeaf48f31f2fdd0380418.svg",
     "static/media/Products-icon.svg": "/excellent/static/media/Products-icon.f88633ea55a75da897ef4ee0730a0353.svg",
     "static/media/Stats-icon.svg": "/excellent/static/media/Stats-icon.5dbc2703566ec7dff268290eef138540.svg",
+    "static/media/eye.svg": "/excellent/static/media/eye.b2789511377698843556ffe901ea200b.svg",
     "static/media/Clients-icon.svg": "/excellent/static/media/Clients-icon.23c0e2970c9ce3289d9bccd167e3c613.svg",
     "index.html": "/excellent/index.html",
     "static/media/Homepage-icon.svg": "/excellent/static/media/Homepage-icon.135522fe35035788367904f1bdfdf254.svg",
-    "main.67ad312e.css.map": "/excellent/static/css/main.67ad312e.css.map",
-    "main.db8abfcf.js.map": "/excellent/static/js/main.db8abfcf.js.map",
+    "main.86eec8dc.css.map": "/excellent/static/css/main.86eec8dc.css.map",
+    "main.0beca911.js.map": "/excellent/static/js/main.0beca911.js.map",
     "453.49da82c7.chunk.js.map": "/excellent/static/js/453.49da82c7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.67ad312e.css",
-    "static/js/main.db8abfcf.js"
+    "static/css/main.86eec8dc.css",
+    "static/js/main.0beca911.js"
   ]
 }
