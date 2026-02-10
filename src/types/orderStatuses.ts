@@ -1,4 +1,4 @@
-export type OrderStatuses = {
+export type OrderStatusesT = {
   created: number | null;
   shipping: number | null;
   canceled: number | null;

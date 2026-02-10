@@ -3,7 +3,11 @@ import Layout from "../../components/Layout/Layout";
 export function SettingsPage() {
   return (
     <Layout>
-      <h1>Settings</h1>
+      <div className="section">
+        <div className="section_header">
+          <h1 className="title">Settings</h1>
+        </div>
+      </div>
     </Layout>
   )
 }

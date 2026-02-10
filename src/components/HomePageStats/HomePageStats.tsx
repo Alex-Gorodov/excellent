@@ -1,7 +1,7 @@
-import { OrderStatuses } from "../../types/orderStatuses";
+import { OrderStatusesT } from "../../types/orderStatuses";
 
 interface HomePageStatsProps {
-  c: OrderStatuses;
+  c: OrderStatusesT;
 }
 
 export default function HomePageStats({c}: HomePageStatsProps) {

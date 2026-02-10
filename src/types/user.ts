@@ -7,6 +7,9 @@ export type User = {
   phone: string;
   email: string;
   role: Roles;
-  company: string;
+  company: {
+    name: string;
+    logo: string;
+  };
   password?: string;
 }

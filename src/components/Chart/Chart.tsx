@@ -3,12 +3,13 @@ import { useWindowSize } from '../../hooks/useWindowSize';
 import { useState } from 'react';
 
 interface ChartProps {
+  title: string;
   timeRange: Date[];
   data: number[];
   colors: string[];
 }
 
-export function Chart({timeRange, data, colors}: ChartProps) {
+export function Chart({title, timeRange, data, colors}: ChartProps) {
   const isMobile = useWindowSize().width < 520;
   const [activeBtn, setActiveBtn] = useState<'1 week' | '2 weeks' | 'month' | 'year'>('1 week');
 
@@ -39,7 +40,7 @@ export function Chart({timeRange, data, colors}: ChartProps) {
     <div className="chart">
 
         <div className="chart_top">
-          <p className="title">Profit over time</p>
+          <p className="chart_title title">{title}</p>
           <div className="chart_buttons">
             <button className={`chart_button ${activeBtn === '1 week' ? 'chart_button--active' : ''}`} onClick={() => setActiveBtn('1 week')}>1 week</button>
             <button className={`chart_button ${activeBtn === '2 weeks' ? 'chart_button--active' : ''}`} onClick={() => setActiveBtn('2 weeks')}>2 weeks</button>

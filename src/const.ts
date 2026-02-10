@@ -14,10 +14,20 @@ export enum AuthorizationStatus {
   Auth = 'AUTH',
 }
 
+export const CURRENT_DATE = new Date();
+
 export enum Roles {
   Admin = "Admin",
   SalesRep = "Sales representative",
   Customer = "Customer"
+}
+
+export enum OrderStatuses {
+  Created = "Created",
+  Shipping = "Shipped",
+  Canceled = "Canceled",
+  Delivered = "Delivered",
+  PartialDelivered = "Partial Delivered",
 }
 
 export const Titles: Record<string, string> = {
