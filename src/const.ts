@@ -19,3 +19,13 @@ export enum Roles {
   SalesRep = "Sales representative",
   Customer = "Customer"
 }
+
+export const Titles: Record<string, string> = {
+  [AppRoute.Root]: "Excellent",
+  [AppRoute.Orders]: "Excellent | Orders",
+  [AppRoute.Products]: "Excellent | Products",
+  [AppRoute.Clients]: "Excellent | Clients",
+  [AppRoute.Profile]: "Excellent | Profile",
+  [AppRoute.Settings]: "Excellent | Settings",
+  [AppRoute.Stats]: "Excellent | Stats",
+};

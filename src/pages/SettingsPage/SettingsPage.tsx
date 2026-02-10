@@ -3,7 +3,7 @@ import Layout from "../../components/Layout/Layout";
 export function SettingsPage() {
   return (
     <Layout>
-      <p>Settings</p>
+      <h1>Settings</h1>
     </Layout>
   )
 }

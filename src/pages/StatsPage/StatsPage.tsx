@@ -3,7 +3,7 @@ import Layout from "../../components/Layout/Layout";
 export function StatsPage() {
   return (
     <Layout>
-      <p>Stats</p>
+      <h1>Stats</h1>
     </Layout>
   )
 }

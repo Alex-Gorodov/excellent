@@ -17,7 +17,7 @@ export function ProfilePage() {
     <Layout>
       <div className="profile">
         <div className="profile_top">
-          <p className="profile_title">Profile</p>
+          <h1 className="profile_title">Profile</h1>
           <button className="profile_edit-button button" onClick={() => setEditable(!isEditable)}>{isEditable ? 'Save' : 'Edit'}</button>
         </div>
         <div className="profile_wrapper">

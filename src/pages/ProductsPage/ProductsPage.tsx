@@ -3,7 +3,7 @@ import Layout from "../../components/Layout/Layout";
 export function ProductsPage() {
   return (
     <Layout>
-      <p>Products</p>
+      <h1>Products</h1>
     </Layout>
   )
 }

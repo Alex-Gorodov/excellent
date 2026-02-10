@@ -11,6 +11,7 @@ import { ProfilePage } from "./pages/ProfilePage/ProfilePage";
 import { SettingsPage } from "./pages/SettingsPage/SettingsPage";
 import { StatsPage } from "./pages/StatsPage/StatsPage";
 import { ClientsPage } from "./pages/ClientsPage/ClientsPage";
+import { PageNotFound } from "./pages/PageNotFound/PageNotFound";
 
 export function App() {
   return (
@@ -24,6 +25,7 @@ export function App() {
           <Route path={AppRoute.Profile} element={<ProfilePage/>}/>
           <Route path={AppRoute.Settings} element={<SettingsPage/>}/>
           <Route path={AppRoute.Stats} element={<StatsPage/>}/>
+          <Route path={"*"} element={<PageNotFound/>}/>
         </Routes>
       </Provider>
     </HistoryRouter>
