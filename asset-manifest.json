@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/excellent/static/css/main.38c636c7.css",
-    "main.js": "/excellent/static/js/main.c41f61dc.js",
+    "main.css": "/excellent/static/css/main.35f2c0a1.css",
+    "main.js": "/excellent/static/js/main.b95326e8.js",
     "static/js/453.49da82c7.chunk.js": "/excellent/static/js/453.49da82c7.chunk.js",
     "static/media/MontserratSemiBold.ttf": "/excellent/static/media/MontserratSemiBold.bc6251227a1673656a57.ttf",
     "static/media/RobotoBold.ttf": "/excellent/static/media/RobotoBold.63311334b795ce3b76e2.ttf",
@@ -19,7 +19,7 @@
     "static/media/eye.svg": "/excellent/static/media/eye.b2789511377698843556ffe901ea200b.svg",
     "static/media/arrow-down.svg": "/excellent/static/media/arrow-down.10b463a3dca39ebeae95f17a145ae4eb.svg",
     "static/media/sort-grid.svg": "/excellent/static/media/sort-grid.647355c734dd14cbfed973ab3f26c3b4.svg",
-    "static/media/attachment.svg": "/excellent/static/media/attachment.426a0586b513b2afa4f964d2192e9d09.svg",
+    "static/media/attachment.svg": "/excellent/static/media/attachment.9cdfad06f49f127672cc872667063350.svg",
     "static/media/Clients-icon.svg": "/excellent/static/media/Clients-icon.23c0e2970c9ce3289d9bccd167e3c613.svg",
     "static/media/search.svg": "/excellent/static/media/search.e9afb77a488500e0c556f5274f0a49d4.svg",
     "index.html": "/excellent/index.html",
@@ -29,12 +29,12 @@
     "static/media/arrow-next.svg": "/excellent/static/media/arrow-next.5532db27490aca75071ba16933234433.svg",
     "static/media/Homepage-icon.svg": "/excellent/static/media/Homepage-icon.135522fe35035788367904f1bdfdf254.svg",
     "static/media/check-icon.svg": "/excellent/static/media/check-icon.cd24c536b0eca3c51f30.svg",
-    "main.38c636c7.css.map": "/excellent/static/css/main.38c636c7.css.map",
-    "main.c41f61dc.js.map": "/excellent/static/js/main.c41f61dc.js.map",
+    "main.35f2c0a1.css.map": "/excellent/static/css/main.35f2c0a1.css.map",
+    "main.b95326e8.js.map": "/excellent/static/js/main.b95326e8.js.map",
     "453.49da82c7.chunk.js.map": "/excellent/static/js/453.49da82c7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.38c636c7.css",
-    "static/js/main.c41f61dc.js"
+    "static/css/main.35f2c0a1.css",
+    "static/js/main.b95326e8.js"
   ]
 }
