@@ -2,9 +2,12 @@ import { useState } from "react";
 import { InputField } from "../../components/InputField/InputField";
 import Layout from "../../components/Layout/Layout";
 import { ReactComponent as Eye } from "../../assets/img/icons/eye.svg";
-import { users } from "../../assets/mocks/users";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/root-reducer";
 
 export function ProfilePage() {
+  const users = useSelector((state: RootState) => state.data.users);
+
   const [isEditable, setEditable] = useState(false)
   const [name, setName] = useState(users[0].name)
   const [companyName, setCompanyName] = useState(users[0].company.name)

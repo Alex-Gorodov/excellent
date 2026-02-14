@@ -1,15 +1,31 @@
 import { DataState } from "../../types/store";
 import { createReducer } from "@reduxjs/toolkit";
-import { loadUsers } from "../actions";
+import { addMessage, changeOrderStatus, loadOrders, loadUsers } from "../actions";
 
 const initialState: DataState = {
   isUsersLoading: true,
   users: [],
+  isOrdersLoading: true,
+  orders: [],
 }
 
 export const dataReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(loadUsers, (state, action) => {
       state.users = action.payload.users;
+    })
+    .addCase(loadOrders, (state, action) => {
+      state.orders = action.payload.orders
+    })
+    .addCase(addMessage, (state, action) => {
+      const order = state.orders.find((o) => o.id === action.payload.order.id)
+      order?.chat.push(action.payload.message);
+    })
+    .addCase(changeOrderStatus, (state, action) => {
+      const order = state.orders.find((o) => o.id === action.payload.order.id);
+
+      if (order) {
+        order.orderStatus = action.payload.status;
+      }
     })
 })

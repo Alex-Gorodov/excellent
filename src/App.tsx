@@ -14,6 +14,7 @@ import { ClientsPage } from "./pages/ClientsPage/ClientsPage";
 import { PageNotFound } from "./pages/PageNotFound/PageNotFound";
 
 export function App() {
+  
   return (
     <HistoryRouter history={browserHistory} basename="/">
       <Provider store={store}>

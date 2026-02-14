@@ -5,12 +5,19 @@
     & > *
       min-width: 0
   &__header
-    margin-bottom: 20px
-    @media (max-width: $tablet-width)
-      width: max-content
+    margin-top: -20px
+    padding-top: 20px
+    @media (max-width: $mobile-width)
+      align-items: unset
+      gap: 20px
+      width: 100%
+      flex-direction: column
+
   &__buttons
     display: flex
     gap: 20px
+    @media (max-width: $mobile-width)
+      justify-content: space-between
   &__half-buttons
     display: flex
 

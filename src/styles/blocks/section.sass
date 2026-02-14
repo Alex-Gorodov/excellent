@@ -1,9 +1,17 @@
 .section
+  padding-top: 20px
   &__header
+    position: sticky
+    inset: 0
+    padding-bottom: 12px
+    background-color: $light-gray
     display: flex
     flex-direction: row
     justify-content: space-between
-    align-items: top
+    align-items: flex-start
+    z-index: 10
+    @media (max-width: $mobile-width)
+      align-items: center
   &__wrapper
     padding: 30px
     border-radius: 20px

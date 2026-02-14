@@ -5,16 +5,40 @@ import { ReactComponent as Grid } from "../../assets/img/icons/sort-grid.svg";
 import { ReactComponent as Prev } from "../../assets/img/icons/arrow-prev.svg";
 import { ReactComponent as Next } from "../../assets/img/icons/arrow-next.svg";
 import { InlineOrderItem } from "../../components/OrderItem/InlineOrderItem";
-import { useState } from "react";
-import { orders } from "../../assets/mocks/orders";
+import { useEffect, useState } from "react";
+import { getPagination } from "../../utils/getPagination";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/root-reducer";
 
 export function OrdersPage() {
+  const orders = useSelector((state: RootState) => state.data.orders);
   const [sortView, setSortView] = useState<'list' | 'grid'>('list');
 
   const pageSize = 10;
   const totalPages = Math.ceil(orders.length / pageSize);
   const isMultiPage = totalPages > 1;
   const [currentPage, setCurrentPage] = useState(1);
+  const [delta, setDelta] = useState(2);
+
+  useEffect(() => {
+    const updateDelta = () => {
+      const width = window.innerWidth;
+
+      if (width < 600) setDelta(1);
+      else if (width < 1024) setDelta(2);
+      else setDelta(3);
+    };
+
+    updateDelta();
+    window.addEventListener('resize', updateDelta);
+    return () => window.removeEventListener('resize', updateDelta);
+  }, []);
+
+  const pages =
+    totalPages <= 15 && delta >= 3
+      ? Array.from({ length: totalPages }, (_, i) => i + 1)
+      : getPagination(currentPage, totalPages, delta);
+
 
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = startIndex + pageSize;
@@ -66,18 +90,34 @@ export function OrdersPage() {
                   <Prev/>
                 </button>
 
-                {Array.from({ length: totalPages }, (__, i) => (
+                {/* {Array.from({ length: totalPages }, (__, i) => (
                   <button key={i} className={`pagination__btn ${currentPage === i + 1 ? 'pagination__btn--active' : ''}`} onClick={() => setCurrentPage(i + 1)}>
                     {i + 1}
                   </button>
-                ))}
+                ))} */}
+
+                {pages.map((p, i) =>
+                  p === "..." ? (
+                    <span key={i} className="pagination__dots">...</span>
+                  ) : (
+                    <button
+                      key={i}
+                      className={`pagination__btn ${currentPage === p ? 'pagination__btn--active' : ''}`}
+                      onClick={() => setCurrentPage(Number(p))}
+                    >
+                      {p}
+                    </button>
+                  )
+                )}
 
                 <button className={`pagination__btn ${currentPage < totalPages ? 'pagination__btn--available' : ''}`} onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages}>
                   <Next/>
                 </button>
+
               </div>
             )
           }
+
         </div>
       </div>
     </Layout>

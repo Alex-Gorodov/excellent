@@ -40,7 +40,7 @@ export function InlineOrderItem({order, number}: OrderItemProps) {
           ).toFixed(2)
         }
         </span>
-        <OrderStatus status={order.orderStatus}/>
+        <OrderStatus order={order}/>
       </div>
       {
         isOrderOpened

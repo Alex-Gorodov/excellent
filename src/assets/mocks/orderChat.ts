@@ -49,12 +49,6 @@ export const chatPhrases = {
 type Role = "customer" | "manager";
 type Mood = "positive" | "negative";
 
-// export function getRandomChatPhrase(role: Role, mood: Mood) {
-//   const phrases = chatPhrases[role][mood];
-//   return phrases[Math.floor(Math.random() * phrases.length)];
-// }
-
-
 /* -------------------- helpers -------------------- */
 
 const getRandomUser = () =>
@@ -65,36 +59,6 @@ export function getRandomChatPhrase(role: Role, mood: Mood) {
   return phrases[Math.floor(Math.random() * phrases.length)];
 }
 
-/* -------------------- 1 сообщение -------------------- */
-
-// export function generateChatMessage(
-//   orderId: string,
-//   index: number
-// ): ChatMessage {
-//   return {
-//     id: `msg-${orderId}-${index}`,
-//     orderId,
-//     date: new Date(Date.now() - Math.random() * 100000000),
-//     message: getRandomPhrase(),
-//     author: getRandomUser(),
-//     viewed: Math.random() > 0.5,
-//   };
-// }
-
-/* -------------------- чат для заказа -------------------- */
-
-// export function generateChatForOrder(orderId: string): ChatMessage[] {
-//   const count = Math.floor(Math.random() * 6) + 2; // 2–7 сообщений
-
-//   return Array.from({ length: count }, (_, i) => ({
-//     id: `msg-${orderId}-${i}`,
-//     orderId,
-//     date: new Date(Date.now() - (count - i) * 600000),
-//     message: getRandomPhrase(),
-//     author: users[i % users.length], // чередование "диалога"
-//     viewed: i !== count - 1, // последнее чаще непрочитано
-//   }));
-// }
 
 export function generateChatForOrder(orderId: string) {
   const count = Math.floor(Math.random() * 2) + 3;
@@ -112,13 +76,11 @@ export function generateChatForOrder(orderId: string) {
         mood
       ),
       author: isCustomer ? users[0] : users[1],
-      viewed: i !== count - 1,
+      // viewed: i !== 0,
+      viewed: true,
     };
   });
 }
-
-
-/* -------------------- опционально: все чаты сразу -------------------- */
 
 export function generateChatsForOrders(orderIds: string[]) {
   return orderIds.reduce<Record<string, ChatMessage[]>>((acc, id) => {

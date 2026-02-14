@@ -4,11 +4,14 @@ import {ReactComponent as Clients} from "../../assets/img/icons/Clients-icon.svg
 import {ReactComponent as Home} from "../../assets/img/icons/Homepage-icon.svg"
 import {ReactComponent as Orders} from "../../assets/img/icons/Orders-icon.svg"
 import {ReactComponent as Stats} from "../../assets/img/icons/Stats-icon.svg"
-import { users } from '../../assets/mocks/users'
 import { NavLink } from 'react-router-dom'
 import { AppRoute } from '../../const'
+import { useSelector } from "react-redux"
+import { RootState } from "../../store/root-reducer"
 
 export default function Header() {
+
+  const users = useSelector((state: RootState) => state.data.users);
 
   return (
     <header>

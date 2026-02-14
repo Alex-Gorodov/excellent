@@ -5,7 +5,10 @@ import { CompanyItem } from "../CompanyItem/CompanyItem";
 import { CustomerItem } from "../CustomerItem/CustomerItem";
 import { OrderStatus } from "../OrderStatus/OrderStatus";
 import { OrderChatMessage } from "../OrderChatMessage/OrderChatMessage";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addMessage } from "../../store/actions";
+import { RootState } from "../../store/root-reducer";
 
 interface OrderFullProps {
   order: Order;
@@ -14,6 +17,11 @@ interface OrderFullProps {
 }
 
 export function OrderFull({order, number, onClose}: OrderFullProps) {
+  const users = useSelector((state: RootState) => state.data.users)
+  const dispatch = useDispatch();
+
+  const [message, setMessage] = useState('');
+
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -22,6 +30,23 @@ export function OrderFull({order, number, onClose}: OrderFullProps) {
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
   }, []);
+
+  const sortedChat = [...order.chat].reverse();
+
+  const handleSendMessage = () => {
+    message.length >= 5 && dispatch(addMessage({
+      order: order,
+      message: {
+        id: 'message-' + new Date().getMilliseconds(),
+        date: new Date(),
+        orderId: order.id,
+        message: message,
+        author: users[0],
+        viewed: false
+      }
+    }))
+    setMessage('')
+  }
 
   return (
     <div className="order__wrapper" onClick={onClose}>
@@ -82,17 +107,17 @@ export function OrderFull({order, number, onClose}: OrderFullProps) {
             </div>
           </div>
           <div className="message order__table order__table--new-message">
-            <textarea className="message__field" name="new-message" rows={6}></textarea>
+            <textarea className="message__field" name="new-message" rows={6} value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
             <div className="message__buttons">
               <button className="message__attach-btn">
                 <Attach/>
               </button>
-              <button className="button">Send</button>
+              <button className="button" onClick={() => handleSendMessage()}>Send</button>
             </div>
           </div>
           <div className="chat">
             {
-              order.chat.map((m) => (
+              sortedChat.map((m) => (
                 <OrderChatMessage message={m}/>
               ))
             }
@@ -108,7 +133,7 @@ export function OrderFull({order, number, onClose}: OrderFullProps) {
             </p>
             <p className="customer__item-wrapper customer__order-status">
               <span className="customer__item-label">Order status</span>
-              <OrderStatus status={order.orderStatus} isInteractive/>
+              <OrderStatus order={order} isInteractive/>
             </p>
             <p className="customer__item-wrapper">
               <span className="customer__item-label">Delivery adress</span>
