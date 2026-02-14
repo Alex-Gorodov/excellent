@@ -1,0 +1,26 @@
+.product
+  display: grid
+  padding: 10px 20px
+  grid-template-columns: minmax(30px, 60px) minmax(150px, 1.5fr) minmax(100px, 1fr) minmax(40px, 1fr) minmax(40px, 0.8fr) minmax(60px, 0.8fr) minmax(140px, 180px)
+  align-items: center
+  counter-increment: product-counter
+  &:not(:nth-last-child(1))
+    border-bottom: 1px solid $border-gray
+  &::before
+    content: counter(product-counter, decimal-leading-zero)
+    font-size: 24px
+
+  &__name-container
+    display: flex
+    align-items: center
+    gap: 15px
+
+  &__name-wrapper
+    display: flex
+    flex-direction: column
+
+  &__id
+    color: $id-gray
+  &__name
+    font-size: 20px
+    font-weight: 500

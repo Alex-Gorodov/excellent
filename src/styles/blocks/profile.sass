@@ -4,15 +4,15 @@
   gap: 40px
   @media (max-width: $mobile-width)
     gap: 16px
-  &_title
+  &__title
     font-size: clamp(1rem, 0.674rem + 1.3725vw, 1.875rem)
-  &_form
+  &__form
     display: grid
     grid-template-columns: repeat(2, minmax(200px, 430px))
     gap: 12px
     @media (max-width: 768px)
       grid-template-columns: 1fr
-  &_image-wrapper
+  &__image-wrapper
     display: flex
     flex-direction: column
     grid-column: 1 / 3
@@ -25,7 +25,7 @@
       gap: 24px
       @media (max-width: $mobile-width)
         flex-direction: column
-  &_image-btn
+  &__image-btn
     position: relative
     overflow: hidden
     &::after
@@ -42,10 +42,10 @@
       padding-left: 45px
       &::after
         left: 15px
-  &_buttons
+  &__buttons
     display: flex
     gap: 16px
-  &_password-wrapper
+  &__password-wrapper
     display: flex
     flex-direction: column
     gap: 12px

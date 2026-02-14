@@ -1,0 +1,80 @@
+.status
+  display: flex
+  width: 100%
+  gap: 12px
+  align-items: center
+  justify-content: center
+  padding: 10px 0
+  font-size: 14px
+  font-weight: 500
+  text-transform: uppercase
+  text-align: center
+  border: 1px solid
+  border-radius: 10px
+  background-color: transparent
+
+  &__wrapper
+    position: relative
+
+  &--created
+    color: $orange
+    border-color: $orange
+
+  &--shipped
+    color: $orange
+    border-color: $orange
+
+  &--partial-delivered
+    color: $red
+    border-color: $red
+
+  &--canceled
+    color: $red
+    border-color: $red
+
+  &--delivered
+    color: $green
+    border-color: $green
+
+  &--no-border
+    border: none
+
+  &__list
+    @include list-reset
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    display: flex
+    border: 1px solid
+    border-radius: 10px
+    flex-direction: column
+    background-color: $white
+    box-shadow: $shadow
+    z-index: 10
+    &--created
+      border-color: $orange
+
+    &--shipped
+      border-color: $orange
+
+    &--partial-delivered
+      border-color: $red
+
+    &--canceled
+      border-color: $red
+
+    &--delivered
+      border-color: $green
+
+  &__list-item
+    transition: 0.3s
+    &:hover
+      background-color: $light-gray
+      opacity: 0.6
+    &:active
+      background-color: $light-gray
+      opacity: 0.3
+    &:focus-visible
+      background-color: $light-gray
+      opacity: 0.6

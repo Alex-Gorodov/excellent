@@ -13,8 +13,8 @@ export function HomePage() {
   return (
     <Layout>
       <HomePageStats c={companies[0].stats}/>
-      <Chart title={'Orders over time'} colors={['#FFEE56f0']} timeRange={dates} data={[6, 8, 10, 14, 19, 24, 29, 33, 38, 43, 48, 52, 55, 57, 61, 64, 68, 72, 77]}/>
-      <Chart title={'Profit over time'} colors={['#A5C822f0']} timeRange={dates} data={[67, 96, 161, 241, 322, 402, 483, 563, 644, 724, 758, 814, 880, 927, 1032, 1091, 1147, 1198, 1264]}/>
+      <Chart title={'Orders over time'} label={'Orders'} colors={['#FFEE56f0']} timeRange={dates} data={[6, 8, 10, 14, 19, 24, 29, 33, 38, 43, 48, 52, 55, 57, 61, 64, 68, 72, 77]}/>
+      <Chart title={'Profit over time'} label={'Profit'} colors={['#A5C822f0']} timeRange={dates} data={[67, 96, 161, 241, 322, 402, 483, 563, 644, 724, 758, 814, 880, 927, 1032, 1091, 1147, 1198, 1264]}/>
     </Layout>
   )
 }

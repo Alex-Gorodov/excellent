@@ -5,8 +5,8 @@
 export function CustomCheckbox() {
   return (
     <label className="checkbox">
-      <input className="checkbox_input visually-hidden" type="checkbox"/>
-      <span className="checkbox_mark"></span>
+      <input className="checkbox__input visually-hidden" type="checkbox"/>
+      <span className="checkbox__mark"></span>
     </label>
   )
 }

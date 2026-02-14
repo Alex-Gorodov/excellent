@@ -9,8 +9,8 @@ export function ProductsPage() {
   return (
     <Layout>
       <div className="section">
-        <div className="section_header">
-          <div className="products_search-wrapper">
+        <div className="section__header">
+          <div className="products__search-wrapper">
             <h1 className="title">Products</h1>
             <InputField className="products" id={"products-search"} name="Search" label={""} type={"text"} value={searchValue} placeholder="Search" disabled={false} icon={<Search/>} onChange={(e) => setSearchValue(e.target.value)}/>
           </div>

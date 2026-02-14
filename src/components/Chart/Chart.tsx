@@ -4,12 +4,13 @@ import { useState } from 'react';
 
 interface ChartProps {
   title: string;
+  label: string;
   timeRange: Date[];
   data: number[];
   colors: string[];
 }
 
-export function Chart({title, timeRange, data, colors}: ChartProps) {
+export function Chart({title, timeRange, data, label, colors}: ChartProps) {
   const isMobile = useWindowSize().width < 520;
   const [activeBtn, setActiveBtn] = useState<'1 week' | '2 weeks' | 'month' | 'year'>('1 week');
 
@@ -39,16 +40,16 @@ export function Chart({title, timeRange, data, colors}: ChartProps) {
   return (
     <div className="chart">
 
-        <div className="chart_top">
-          <p className="chart_title title">{title}</p>
-          <div className="chart_buttons">
-            <button className={`chart_button ${activeBtn === '1 week' ? 'chart_button--active' : ''}`} onClick={() => setActiveBtn('1 week')}>1 week</button>
-            <button className={`chart_button ${activeBtn === '2 weeks' ? 'chart_button--active' : ''}`} onClick={() => setActiveBtn('2 weeks')}>2 weeks</button>
-            <button className={`chart_button ${activeBtn === 'month' ? 'chart_button--active' : ''}`} onClick={() => setActiveBtn('month')}>1 month</button>
-            <button className={`chart_button ${activeBtn === 'year' ? 'chart_button--active' : ''}`} onClick={() => setActiveBtn('year')}>1 year</button>
+        <div className="chart__top">
+          <p className="chart__title title">{title}</p>
+          <div className="chart___buttons">
+            <button className={`chart__button ${activeBtn === '1 week' ? 'chart__button--active' : ''}`} onClick={() => setActiveBtn('1 week')}>1 week</button>
+            <button className={`chart__button ${activeBtn === '2 weeks' ? 'chart__button--active' : ''}`} onClick={() => setActiveBtn('2 weeks')}>2 weeks</button>
+            <button className={`chart__button ${activeBtn === 'month' ? 'chart__button--active' : ''}`} onClick={() => setActiveBtn('month')}>1 month</button>
+            <button className={`chart__button ${activeBtn === 'year' ? 'chart__button--active' : ''}`} onClick={() => setActiveBtn('year')}>1 year</button>
           </div>
         </div>
-        <div className="chart_graph">
+        <div className="chart__graph">
           <LineChart
             colors={colors}
             xAxis={[
@@ -67,7 +68,7 @@ export function Chart({title, timeRange, data, colors}: ChartProps) {
                 data: visibleData,
                 valueFormatter: (v) => `$${v}`,
                 area: true,
-                label: 'Profits',
+                label: label,
                 labelMarkType: 'circle',
 
               },

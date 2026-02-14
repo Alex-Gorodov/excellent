@@ -13,83 +13,83 @@ export default function Header() {
   return (
     <header>
       <nav className='navigation'>
-        <ul className='navigation_list'>
-          <li className='navigation_item'>
+        <ul className='navigation__list'>
+          <li className='navigation__item'>
             <NavLink
               className={({ isActive }) =>
-                `navigation_link ${isActive ? 'navigation_link--active' : ''}`
+                `navigation__link ${isActive ? 'navigation__link--active' : ''}`
               }
               to={AppRoute.Profile}
               aria-label='Profile'
             >
-              <img className='navigation_icon navigation_icon--avatar' src={users[0].avatar} alt={users[0].name}/>
+              <img className='navigation__icon navigation__icon--avatar' src={users[0].avatar} alt={users[0].name}/>
             </NavLink>
           </li>
-          <li className='navigation_item'>
+          <li className='navigation__item'>
             <NavLink
               className={({ isActive }) =>
-                `navigation_link ${isActive ? 'navigation_link--active' : ''}`
+                `navigation__link ${isActive ? 'navigation__link--active' : ''}`
               }
               to={AppRoute.Root}
               end
               aria-label='Home page'
             >
-              <Home className='navigation_icon'/>
+              <Home className='navigation__icon'/>
             </NavLink>
           </li>
-          <li className='navigation_item'>
+          <li className='navigation__item'>
             <NavLink
               className={({ isActive }) =>
-                `navigation_link ${isActive ? 'navigation_link--active' : ''}`
+                `navigation__link ${isActive ? 'navigation__link--active' : ''}`
               }
               to={AppRoute.Orders}
               aria-label='Orders'
             >
-              <Orders className='navigation_icon'/>
+              <Orders className='navigation__icon'/>
             </NavLink>
           </li>
-          <li className='navigation_item'>
+          <li className='navigation__item'>
             <NavLink
               className={({ isActive }) =>
-                `navigation_link ${isActive ? 'navigation_link--active' : ''}`
+                `navigation__link ${isActive ? 'navigation__link--active' : ''}`
               }
               to={AppRoute.Products}
               aria-label='Products'
             >
-              <Products className='navigation_icon'/>
+              <Products className='navigation__icon'/>
             </NavLink>
           </li>
-          <li className='navigation_item'>
+          <li className='navigation__item'>
             <NavLink
               className={({ isActive }) =>
-                `navigation_link ${isActive ? 'navigation_link--active' : ''}`
+                `navigation__link ${isActive ? 'navigation__link--active' : ''}`
               }
               to={AppRoute.Clients}
               aria-label='Clients'
             >
-              <Clients className='navigation_icon'/>
+              <Clients className='navigation__icon'/>
             </NavLink>
           </li>
-          <li className='navigation_item'>
+          <li className='navigation__item'>
             <NavLink
               className={({ isActive }) =>
-                `navigation_link ${isActive ? 'navigation_link--active' : ''}`
+                `navigation__link ${isActive ? 'navigation__link--active' : ''}`
               }
               to={AppRoute.Stats}
               aria-label='Statistics'
             >
-              <Stats className='navigation_icon'/>
+              <Stats className='navigation__icon'/>
             </NavLink>
           </li>
-          <li className='navigation_item'>
+          <li className='navigation__item'>
             <NavLink
               className={({ isActive }) =>
-                `navigation_link ${isActive ? 'navigation_link--active' : ''}`
+                `navigation__link ${isActive ? 'navigation__link--active' : ''}`
               }
               to={AppRoute.Settings}
               aria-label='Settings'
             >
-              <Settings className='navigation_icon'/>
+              <Settings className='navigation__icon'/>
             </NavLink>
           </li>
         </ul>

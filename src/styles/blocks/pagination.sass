@@ -1,0 +1,26 @@
+.pagination
+  display: flex
+  align-items: center
+  gap: 16px
+  padding: 15px 15px 46px
+  &__btn
+    border: none
+    background-color: transparent
+    opacity: 0.3
+    font-size: 16px
+    font-weight: 600
+    cursor: pointer
+    transition: 0.3s
+    &:hover
+      opacity: 1
+    &:active
+      opacity: 0.6
+    &--active,
+    &--available
+      opacity: 1
+      &:hover
+        opacity: 0.6
+      &:active
+        opacity: 0.3
+    & svg
+      display: block

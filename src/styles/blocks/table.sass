@@ -1,22 +1,22 @@
 .table
-  &_line
+  &__line
     display: grid
-    // grid-template-columns: minmax(20px ,100px) repeat(7, 1fr)
-
+    grid-template-columns: minmax(80px, 100px) minmax(180px, 2.5fr) minmax(180px, 2.5fr) minmax(40px, 1fr) minmax(40px, 1fr) minmax(30px, 0.8fr) minmax(90px, 0.8fr) minmax(140px, 180px)
     grid-template-columns: minmax(80px, 100px) minmax(180px, 2.5fr) minmax(180px, 2.5fr) minmax(40px, 1fr) minmax(40px, 1fr) minmax(30px, 0.8fr) minmax(90px, 0.8fr) minmax(140px, 180px)
     padding: 20px 15px
     justify-content: flex-start
     gap: 12px
     align-items: center
+    border-bottom: 1px solid $border-gray
     & > *
       min-width: 0
-  &_header
+  &__header
     border-bottom: 1px solid $black-opacity
-  &_checkbox-wrapper
+  &__checkbox-wrapper
     display: flex
     gap: 8px
     align-items: center
-  &_column
+  &__column
     &-name
       font-size: 16px
       font-weight: 500
@@ -25,10 +25,20 @@
       overflow: hidden
       text-overflow: ellipsis
     &-number
+      border: none
       text-decoration: underline
       font-size: 18px
       font-weight: 500
+      background-color: transparent
       color: $orange
+      cursor: pointer
+      transition: 0.3s
+      &:hover
+        opacity: 0.6
+      &:active
+        opacity: 0.3
+      &:focus-visible
+        opacity: 0.6
     &-status
       min-width: 180px
       padding: 10px 0
@@ -54,7 +64,7 @@
         color: $green
         border-color: $green
 
-  &_company-wrapper
+  &__company-wrapper
     display: flex
     gap: 20px
     align-items: center

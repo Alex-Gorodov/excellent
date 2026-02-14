@@ -17,10 +17,10 @@ export function InputField({id, label, name, type, value, placeholder, icon, dis
   const [isPasswordVisible, setPasswordVisible] = useState(false);
 
   return (
-    <label className={`input ${className ? className + '_input' : ''}`} htmlFor={id}>
-      <span className={`input_label ${className ? className + '_input-label' : ''}`}>{label}</span>
-      <input className={`input_field ${className ? className + '_input-field' : ''}`} id={id} name={name} type={type === 'password' ? !isPasswordVisible ? type : 'text' : type} onChange={onChange} value={value} placeholder={placeholder} disabled={disabled}/>
-      <span className={`input_icon ${className ? className + '_input-icon' : ''}`} role="button" onClick={() => setPasswordVisible(!isPasswordVisible)}>{icon}</span>
+    <label className={`input ${className ? className + '__input' : ''}`} htmlFor={id}>
+      <span className={`input__label ${className ? className + '__input-label' : ''}`}>{label}</span>
+      <input className={`input__field ${className ? className + '__input-field' : ''}`} id={id} name={name} type={type === 'password' ? !isPasswordVisible ? type : 'text' : type} onChange={onChange} value={value} placeholder={placeholder} disabled={disabled}/>
+      <span className={`input__icon ${className ? className + '__input-icon' : ''}`} role="button" onClick={() => setPasswordVisible(!isPasswordVisible)}>{icon}</span>
     </label>
   )
 }

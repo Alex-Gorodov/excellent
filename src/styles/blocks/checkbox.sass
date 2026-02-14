@@ -3,7 +3,7 @@
   display: block
   width: 25px
   height: 25px
-  &_mark
+  &__mark
     position: absolute
     top: 0
     left: 0
@@ -11,7 +11,7 @@
     width: 25px
     height: 25px
     border: 1px solid $black-opacity
-  &_input
+  &__input
     transition: 0.3s
   &:hover
     opacity: 0.6
@@ -19,19 +19,19 @@
   &:active
     opacity: 0.3
 
-  &_input:focus-visible .checkbox_mark
+  &__input:focus-visible .checkbox__mark
     outline: 2px solid $orange
 
-  &_input:checked + .checkbox_mark
+  &__input:checked + .checkbox__mark
     background-image: url("../../assets/img/icons/check-icon.svg")
     background-repeat: no-repeat
     background-position: center
     background-size: 16px 16px
     border-color: $black
 
-  &_input:disabled ~ .checkbox_mark
+  &__input:disabled ~ .checkbox__mark
     opacity: 0.1
 
-  &_input:disabled ~ .checkbox_label
+  &__input:disabled ~ .checkbox__label
     opacity: 0.1
 

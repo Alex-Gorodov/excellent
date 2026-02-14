@@ -1,5 +1,11 @@
-import { Roles } from "../../const";
-import { User } from "../../types/user";
+import fishMarket from '../img/companies/Fish-Market.png'
+import uws from '../img/companies/The-Consulate-UWS.png'
+import foods from '../img/companies/Shamrock-Foods.png'
+import meats from '../img/companies/Quality-Meats.png'
+import seaHorse from '../img/companies/SeaHorse.png'
+import soho from '../img/companies/Soho.png'
+import jam from '../img/companies/Jam.png'
+
 import user0 from '../img/users/user-0.png';
 import user1 from '../img/users/user-1.png';
 import user2 from '../img/users/user-2.png';
@@ -12,13 +18,8 @@ import user8 from '../img/users/user-8.png';
 import user9 from '../img/users/user-9.png';
 import user10 from '../img/users/user-10.png';
 
-import fishMarket from '../img/companies/Fish-Market.png'
-import jam from '../img/companies/Jam.png'
-import seaHorse from '../img/companies/SeaHorse.png'
-import soho from '../img/companies/Soho.png'
-import uws from '../img/companies/The-Consulate-UWS.png'
-import meats from '../img/companies/Quality-Meats.png'
-import foods from '../img/companies/Shamrock-Foods.png'
+import { User } from "../../types/user";
+import { Roles } from "../../const";
 
 export const users: User[] = [
   {
@@ -33,6 +34,7 @@ export const users: User[] = [
       logo: fishMarket,
     },
     password: 'admin',
+    adress: "6457 Sudbury Way"
   },
   {
     id: 'user-1',
@@ -44,7 +46,8 @@ export const users: User[] = [
     company: {
       name: "Jams",
       logo: jam,
-    }
+    },
+    adress: "6457 Sudbury Way"
   },
   {
     id: 'user-2',
@@ -56,7 +59,8 @@ export const users: User[] = [
     company: {
       name: "SeaHorse",
       logo: seaHorse,
-    }
+    },
+    adress: "6457 Sudbury Way"
   },
   {
     id: 'user-3',
@@ -68,7 +72,8 @@ export const users: User[] = [
     company: {
       name: "Momoya Soho",
       logo: soho,
-    }
+    },
+    adress: "6457 Sudbury Way"
   },
   {
     id: 'user-4',
@@ -80,7 +85,8 @@ export const users: User[] = [
     company: {
       name: "The Consulate UWS",
       logo: uws,
-    }
+    },
+    adress: "6457 Sudbury Way"
   },
   {
     id: 'user-5',
@@ -92,7 +98,8 @@ export const users: User[] = [
     company: {
       name: "Quality Meats",
       logo: meats,
-    }
+    },
+    adress: "6457 Sudbury Way"
   },
   {
     id: 'user-6',
@@ -104,7 +111,8 @@ export const users: User[] = [
     company: {
       name: "The Consulate UWS",
       logo: uws,
-    }
+    },
+    adress: "6457 Sudbury Way"
   },
   {
     id: 'user-7',
@@ -116,7 +124,8 @@ export const users: User[] = [
     company: {
       name: "Jams",
       logo: jam,
-    }
+    },
+    adress: "6457 Sudbury Way"
   },
   {
     id: 'user-8',
@@ -128,7 +137,8 @@ export const users: User[] = [
     company: {
       name: "Momoya Soho",
       logo: soho,
-    }
+    },
+    adress: "6457 Sudbury Way"
   },
   {
     id: 'user-9',
@@ -140,7 +150,8 @@ export const users: User[] = [
     company: {
       name: "Shamrock Foods",
       logo: foods,
-    }
+    },
+    adress: "6457 Sudbury Way"
   },
   {
     id: 'user-10',
@@ -152,7 +163,8 @@ export const users: User[] = [
     company: {
       name: "Quality Meats",
       logo: meats,
-    }
+    },
+    adress: "6457 Sudbury Way"
   },
 ]
 

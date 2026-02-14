@@ -7,6 +7,7 @@ export type User = {
   phone: string;
   email: string;
   role: Roles;
+  adress: string;
   company: {
     name: string;
     logo: string;

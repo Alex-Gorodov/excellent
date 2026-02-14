@@ -19,11 +19,11 @@ export default function Layout({children}: LayoutProps) {
 
   return (
     <div className="page">
-      <div className="page_logo">
+      <div className="page__logo">
         <img src={ExcellentIcon} width={32} height={32} alt='Cube icon'/>
         <img src={ExcellentTitle} alt='Excellent'/>
       </div>
-      <div className="page_content">
+      <div className="page__content">
         <Header/>
         <main className='main'>
           {children}

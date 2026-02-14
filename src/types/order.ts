@@ -1,5 +1,12 @@
 import { OrderStatuses } from "../const";
+import { ChatMessage } from "./chatMessage";
+import { Product } from "./product";
 import { User } from "./user";
+
+type OrderItem = {
+  product: Product;
+  quantity: number;
+};
 
 export type Order = {
   id: string;
@@ -9,7 +16,9 @@ export type Order = {
   };
   customer: User;
   ordered: Date;
-  productsOrdered: number;
-  totalCost: number;
+  deliveryEstimatedDate?: Date;
   orderStatus: OrderStatuses;
+  products: OrderItem[];
+  comment?: string;
+  chat: ChatMessage[];
 }

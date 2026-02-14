@@ -4,7 +4,7 @@ export function StatsPage() {
   return (
     <Layout>
       <div className="section">
-        <div className="section_header">
+        <div className="section__header">
           <h1 className="title">Stats</h1>
         </div>
       </div>

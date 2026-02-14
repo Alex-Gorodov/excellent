@@ -22,20 +22,20 @@ export function ProfilePage() {
   return (
     <Layout>
       <div className="section profile">
-        <div className="section_header profile_top">
+        <div className="section__header profile__top">
           <h1 className="title">Profile</h1>
-          <button className="profile_edit-button button" type={isEditable ? 'submit' : 'button'} onClick={() => setEditable(!isEditable)}>{isEditable ? 'Save' : 'Edit'}</button>
+          <button className="profile__edit-button button" type={isEditable ? 'submit' : 'button'} onClick={() => setEditable(!isEditable)}>{isEditable ? 'Save' : 'Edit'}</button>
         </div>
-        <div className="section_wrapper">
-          <form className="profile_form" action="#" method="POST">
-            <div className="profile_image-wrapper">
-              <span className="profile_image-label input_label">Your photo</span>
+        <div className="section__wrapper">
+          <form className="profile__form" action="#" method="POST">
+            <div className="profile__image-wrapper">
+              <span className="profile__image-label input__label">Your photo</span>
               <div>
-                <img src={users[0].avatar} alt={users[0].name} className="profile_image" width={150} height={150}/>
+                <img src={users[0].avatar} alt={users[0].name} className="profile__image" width={150} height={150}/>
                 {
                   isEditable
                   &&
-                  <button className="profile_image-btn button">Upload image</button>
+                  <button className="profile__image-btn button">Upload image</button>
                 }
               </div>
             </div>
@@ -46,7 +46,7 @@ export function ProfilePage() {
             <InputField id={"email"} name="email" label={"Email"} type={"email"} value={email} onChange={(e) => setEmail(e.target.value)} disabled={!isEditable}/>
             {
               password &&
-              <div className="profile_password-wrapper">
+              <div className="profile__password-wrapper">
                 <InputField id={"password"} name="password" label={"Password"} type={"password"} value={password} icon={isEditable && <Eye/>} onChange={(e) => setPassword(e.target.value)} disabled={!isEditable}/>
                 {
                   isPasswordEditing
@@ -57,7 +57,7 @@ export function ProfilePage() {
                   </>
                 }
 
-                <div className="profile_buttons">
+                <div className="profile__buttons">
                   {isEditable && <button className="button" onClick={() => setPasswordEditing(!isPasswordEditing)} type="button">{isPasswordEditing ? 'Save' : 'Change password'}</button>}
                   {isPasswordEditing && <button className="button button--secondary" onClick={() => setPasswordEditing(!isPasswordEditing)} type="reset">Cancel</button>}
                 </div>

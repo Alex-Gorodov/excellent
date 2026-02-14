@@ -1,6 +1,6 @@
 .chart
   overflow: hidden
-  &_top
+  &__top
     display: flex
     flex-direction: row
     justify-content: space-between
@@ -9,15 +9,15 @@
       gap: 8px
       align-items: flex-start
       flex-direction: column
-  &_title
+  &__title
     text-transform: uppercase
-  &_buttons
+  &___buttons
     display: flex
     justify-content: space-between
     gap: 48px
     @media (max-width: $mobile-width)
       gap: 12px
-  &_button
+  &__button
     border: none
     background-color: transparent
     color: $dark
@@ -30,7 +30,7 @@
     &:hover
       opacity: 1
 
-  &_graph
+  &__graph
     & ul
       display: none
     & svg
