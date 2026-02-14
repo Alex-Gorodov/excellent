@@ -1,8 +1,13 @@
 .orders
   &__wrapper
+    overflow-y: scroll
     padding: 0
+    & > *
+      min-width: 0
   &__header
     margin-bottom: 20px
+    @media (max-width: $tablet-width)
+      width: max-content
   &__buttons
     display: flex
     gap: 20px

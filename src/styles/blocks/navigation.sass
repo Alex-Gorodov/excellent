@@ -20,6 +20,7 @@
     opacity: 0.5
     text-decoration: none
     transition: 0.3s
+    outline: none
     &:has(.navigation__icon--avatar)::after
       position: absolute
       top: -2px
@@ -42,6 +43,8 @@
       opacity: 1
     &:active
       opacity: 0.8
+    &:focus-visible
+      opacity: 1
   &__icon
     width: 40px
     height: 40px

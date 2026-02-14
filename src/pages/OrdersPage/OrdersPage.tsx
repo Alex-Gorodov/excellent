@@ -38,24 +38,26 @@ export function OrdersPage() {
         </div>
         <div className="section__wrapper orders__wrapper">
           <div className="table">
-            <div className="table__header table__line">
-              <div className="table__checkbox-wrapper">
-                <CustomCheckbox/>
-                <span className="table__column-name">№</span>
+            <div className="table__scroll">
+              <div className="table__header table__line">
+                <div className="table__checkbox-wrapper">
+                  <CustomCheckbox/>
+                  <span className="table__column-name">№</span>
+                </div>
+                <span className="table__column-name">Company</span>
+                <span className="table__column-name">Customer</span>
+                <span className="table__column-name">Ordered</span>
+                <span className="table__column-name">Delivery date</span>
+                <span className="table__column-name">Products ordered</span>
+                <span className="table__column-name">Total cost</span>
+                <span className="table__column-name">Order status</span>
               </div>
-              <span className="table__column-name">Company</span>
-              <span className="table__column-name">Customer</span>
-              <span className="table__column-name">Ordered</span>
-              <span className="table__column-name">Delivery date</span>
-              <span className="table__column-name">Products ordered</span>
-              <span className="table__column-name">Total cost</span>
-              <span className="table__column-name">Order status</span>
+              {
+                orders.slice(startIndex, endIndex).map((o, __index) => (
+                  <InlineOrderItem order={o} number={startIndex + __index + 1}/>
+                ))
+              }
             </div>
-            {
-              orders.slice(startIndex, endIndex).map((o, __index) => (
-                <InlineOrderItem order={o} number={startIndex + __index + 1}/>
-              ))
-            }
           </div>
           {
             isMultiPage && (

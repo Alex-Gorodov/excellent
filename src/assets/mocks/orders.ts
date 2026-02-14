@@ -2,6 +2,7 @@ import { OrderStatuses } from "../../const";
 import { Order } from "../../types/order";
 import { getRandomDate } from "../../utils/getRandomDate";
 import { getRandomProductsForOrder } from "../../utils/getRandomProducts";
+import { generateChatForOrder } from "./orderChat";
 import { users } from "./users";
 
 const statuses = Object.values(OrderStatuses);
@@ -20,7 +21,7 @@ export const orders: Order[] = Array.from({ length: 130 }, (_, i) => {
     deliveryEstimatedDate: getRandomDate(new Date().getDate(), 29),
     products: getRandomProductsForOrder(),
     orderStatus: statuses[i % statuses.length],
-    chat: [],
+    chat: generateChatForOrder(`order-${i}`),
     ...(i % 4 === 0 && {
       comment: "Please let me know if the product is out of stock",
     }),

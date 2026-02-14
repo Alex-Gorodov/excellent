@@ -4,7 +4,6 @@
   left: 110px
   display: flex
   flex-direction: column
-  overflow: hidden
   width: 90%
   height: calc(100% - 120px)
   border-radius: 20px
@@ -12,6 +11,15 @@
   box-shadow: $big-shadow
   z-index: 10
   counter-reset: product-counter
+  @media(max-width: $tablet-width)
+    top: 40px
+    left: 20px
+    width: calc(100% - 40px)
+  @media(max-width: $mobile-width)
+    top: 20px
+    left: 10px
+    width: calc(100% - 20px)
+
 
   &__wrapper
     position: fixed
@@ -49,12 +57,18 @@
     grid-template-columns: 3fr 1fr
     grid-template-rows: repeat(3, 1fr)
     overflow-y: scroll
+    @media(max-width: $tablet-width)
+      padding: 12px
+      grid-template-columns: 1fr
+    & > *
+      min-width: 0
 
   &__table
+    min-width: 0
     height: max-content
-    overflow: hidden
     border-radius: 20px
     border: 1px solid $border-gray
+    overflow: hidden
     &--products,
     &--new-message,
     &--chat
@@ -62,13 +76,24 @@
     &--customer
       grid-column: 2
       grid-row: 1 / -1
+      @media(max-width: $tablet-width)
+        grid-row: 2
+    @media(max-width: $tablet-width)
+      grid-column: 1
+
+  &__table-scroll
+    overflow-x: auto
+    border-bottom: 1px solid $border-gray
 
   &__table-header
     display: grid
     padding: 10px 20px
-    grid-template-columns: minmax(30px, 60px) minmax(150px, 1.5fr) minmax(100px, 1fr) minmax(40px, 1fr) minmax(40px, 0.8fr) minmax(60px, 0.8fr) minmax(140px, 180px)
+    grid-template-columns: minmax(30px, 60px) minmax(150px, 1.5fr) minmax(100px, 1fr) minmax(40px, 1fr) minmax(40px, 0.8fr) minmax(60px, 0.8fr) 94px
     align-items: center
     background-color: $table-header-gray
+    @media (max-width: $tablet-width)
+      width: max-content
+      grid-template-columns: 50px minmax(180px, 1.5fr) repeat(5, minmax(60px, 120px))
 
   &__table-footer
     display: grid
@@ -79,3 +104,5 @@
     & p
       font-size: 25px
       font-weight: 600
+    @media (max-width: $tablet-width)
+      grid-template-columns: auto auto

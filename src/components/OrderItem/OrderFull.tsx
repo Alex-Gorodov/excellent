@@ -5,7 +5,7 @@ import { CompanyItem } from "../CompanyItem/CompanyItem";
 import { CustomerItem } from "../CustomerItem/CustomerItem";
 import { OrderStatus } from "../OrderStatus/OrderStatus";
 import { OrderChatMessage } from "../OrderChatMessage/OrderChatMessage";
-import { users } from "../../assets/mocks/users";
+import { useEffect } from "react";
 
 interface OrderFullProps {
   order: Order;
@@ -14,6 +14,15 @@ interface OrderFullProps {
 }
 
 export function OrderFull({order, number, onClose}: OrderFullProps) {
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, []);
+
   return (
     <div className="order__wrapper" onClick={onClose}>
       <div
@@ -27,38 +36,39 @@ export function OrderFull({order, number, onClose}: OrderFullProps) {
           </button>
         </div>
         <div className="order__content">
-
           <div className="order__table order__table--products">
-            <div className="order__table-header">
-              <p>№</p>
-              <p>Product</p>
-              <p>Ordered</p>
-              <p>Stock</p>
-              <p>Unit Price</p>
-              <p>Total Price</p>
-              <p>Margin Price</p>
-            </div>
-            {order.products.map((p) => {
-              return (
-                <div className="product">
-                  <div className="product__name-container">
-                    <img src={p.product.image} alt={p.product.name} width={40} height={40}/>
-                    <p className="product__name-wrapper">
-                      <span className="product__id">{p.product.id}</span>
-                      <span className="product__name">{p.product.name}</span>
+            <div className="order__table-scroll">
+              <div className="order__table-header">
+                <p>№</p>
+                <p>Product</p>
+                <p>Ordered</p>
+                <p>Stock</p>
+                <p>Unit Price</p>
+                <p>Total Price</p>
+                <p>Margin Price</p>
+              </div>
+              {order.products.map((p) => {
+                return (
+                  <div className="product">
+                    <div className="product__name-container">
+                      <img src={p.product.image} alt={p.product.name} width={40} height={40}/>
+                      <p className="product__name-wrapper">
+                        <span className="product__id">{p.product.id}</span>
+                        <span className="product__name">{p.product.name}</span>
+                      </p>
+                    </div>
+                    <p className="product__quantity">
+                      {p.quantity} {p.product.unit}
                     </p>
-                  </div>
-                  <p className="product__quantity">
-                    {p.quantity} {p.product.unit}
-                  </p>
-                  <p className="product__stock">{p.product.stock}</p>
-                  <p className="product__price">${p.product.price} / {p.product.unit}</p>
-                  <p className="product__total-price">${(p.product.price * p.quantity).toFixed(2)}</p>
-                  <p className="product__margin-price">{p.product.marginPrice}%</p>
+                    <p className="product__stock">{p.product.stock}</p>
+                    <p className="product__price">${p.product.price} / {p.product.unit}</p>
+                    <p className="product__total-price">${(p.product.price * p.quantity).toFixed(2)}</p>
+                    <p className="product__margin-price">{p.product.marginPrice}%</p>
 
-                </div>
-              )
-            })}
+                  </div>
+                )
+              })}
+            </div>
             <div className="order__table-footer">
               <p>Total cost:</p>
               <p>
@@ -81,20 +91,11 @@ export function OrderFull({order, number, onClose}: OrderFullProps) {
             </div>
           </div>
           <div className="chat">
-            <OrderChatMessage message={{
-              id: "",
-              date: new Date(),
-              message: "I think I'll cancel the order",
-              author: users[2],
-              viewed: false
-            }}/>
-            <OrderChatMessage message={{
-              id: "",
-              date: new Date(),
-              message: "What do you think?",
-              author: users[4],
-              viewed: false
-            }}/>
+            {
+              order.chat.map((m) => (
+                <OrderChatMessage message={m}/>
+              ))
+            }
           </div>
           <div className="customer order__table order__table--customer">
             <p className="customer__item-wrapper">

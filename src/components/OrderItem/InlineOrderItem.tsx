@@ -15,7 +15,7 @@ export function InlineOrderItem({order, number}: OrderItemProps) {
   const [isOrderOpened, setOrderOpened] = useState(false);
 
   return (
-    <div className="table__content">
+    <>
       <div className="table__line">
         <div className="table__checkbox-wrapper">
           <CustomCheckbox/>
@@ -47,6 +47,6 @@ export function InlineOrderItem({order, number}: OrderItemProps) {
         &&
         <OrderFull order={order} number={number} onClose={() => setOrderOpened(false)}/>
       }
-    </div>
+    </>
   )
 }

@@ -11,13 +11,18 @@
     width: 25px
     height: 25px
     border: 1px solid $black-opacity
+    transition: 0.3s
+    outline: none
+    &:hover
+      opacity: 0.6
+      border-color: $black
+    &:active
+      opacity: 0.3
+    &:focus-visible
+      outline: 2px solid $orange
+
   &__input
     transition: 0.3s
-  &:hover
-    opacity: 0.6
-
-  &:active
-    opacity: 0.3
 
   &__input:focus-visible .checkbox__mark
     outline: 2px solid $orange
@@ -31,7 +36,3 @@
 
   &__input:disabled ~ .checkbox__mark
     opacity: 0.1
-
-  &__input:disabled ~ .checkbox__label
-    opacity: 0.1
-

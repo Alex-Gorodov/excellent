@@ -1,9 +1,14 @@
 .product
   display: grid
   padding: 10px 20px
-  grid-template-columns: minmax(30px, 60px) minmax(150px, 1.5fr) minmax(100px, 1fr) minmax(40px, 1fr) minmax(40px, 0.8fr) minmax(60px, 0.8fr) minmax(140px, 180px)
+  grid-template-columns: 50px minmax(150px, 1.5fr) minmax(100px, 1fr) minmax(40px, 1fr) minmax(40px, 0.8fr) minmax(60px, 0.8fr) 94px
   align-items: center
   counter-increment: product-counter
+  @media (max-width: $tablet-width)
+    // grid-template-columns: 50px 2fr repeat(5, minmax(60px, 120px))
+    width: max-content
+    grid-template-columns: 50px minmax(180px, 1.5fr) repeat(5, minmax(60px, 120px))
+
   &:not(:nth-last-child(1))
     border-bottom: 1px solid $border-gray
   &::before

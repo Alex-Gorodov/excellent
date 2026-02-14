@@ -39,3 +39,21 @@ export const Titles: Record<string, string> = {
   [AppRoute.Settings]: "Excellent | Settings",
   [AppRoute.Stats]: "Excellent | Stats",
 };
+
+export const chatPhrases = [
+  "I think I'll cancel the order",
+  "What do you think?",
+  "Can you change delivery time?",
+  "Please confirm the shipment",
+  "Is this product in stock?",
+  "I'll add more items later",
+  "Can you call me back?",
+  "Everything looks good",
+  "When will it be delivered?",
+  "Thanks!",
+  "Please update me",
+  "I need this urgently",
+  "Can we change the quantity?",
+  "Order received",
+  "Waiting for confirmation"
+];
