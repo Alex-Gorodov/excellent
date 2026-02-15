@@ -16,10 +16,10 @@ export function InlineOrderItem({order, number}: OrderItemProps) {
 
   return (
     <>
-      <div className="table__line">
+      <div className="table__line" role="button" onClick={() => setOrderOpened(true)}>
         <div className="table__checkbox-wrapper">
           <CustomCheckbox/>
-          <button className="table__column-number" onClick={() => setOrderOpened(true)}>{number}</button>
+          <button className="table__column-number">{number}</button>
         </div>
         <CompanyItem image={order.company.logo} text={order.company.name} />
         <CustomerItem image={order.customer.avatar} text={order.customer.name} comment={order.comment}/>

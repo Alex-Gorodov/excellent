@@ -1,0 +1,29 @@
+.table-grid
+  display: grid
+  grid-template-columns: repeat(7, 1fr)
+  gap: clamp(8px, 5vw, 32px)
+  &__title
+    color: $orange
+    text-transform: uppercase
+    font-weight: 600
+    font-size: 20px
+    &--created,
+    &--confirmed,
+    &--picking,
+    &--shipped
+      color: $orange
+
+    &--partial-delivered,
+    &--canceled
+      color: $red
+
+    &--delivered
+      color: $green
+
+  &__group
+    display: flex
+    padding: 15px
+    flex-direction: column
+    border-radius: 10px
+    gap: 8px
+    background-color: $white

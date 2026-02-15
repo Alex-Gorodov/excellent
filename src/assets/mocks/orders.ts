@@ -20,7 +20,7 @@ export const orders: Order[] = Array.from({ length: 130 }, (_, i) => {
     ordered: getRandomDate(0, -5),
     deliveryEstimatedDate: getRandomDate(new Date().getDate(), 29),
     products: getRandomProductsForOrder(),
-    orderStatus: statuses[i % statuses.length],
+    orderStatus: statuses[Math.floor(Math.random() * statuses.length)],
     chat: generateChatForOrder(`order-${i}`),
     ...(i % 4 === 0 && {
       comment: "Please let me know if the product is out of stock",

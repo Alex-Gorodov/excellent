@@ -15,6 +15,10 @@
     gap: 12px
     align-items: center
     border-bottom: 1px solid $border-gray
+    transition: 0.3s
+    cursor: pointer
+    &:not(.table__header):hover
+      background-color: $medium-gray
     & > *
       min-width: 0
     @media (max-width: $tablet-width)

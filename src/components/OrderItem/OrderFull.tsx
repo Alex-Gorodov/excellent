@@ -34,7 +34,7 @@ export function OrderFull({order, number, onClose}: OrderFullProps) {
   const sortedChat = [...order.chat].reverse();
 
   const handleSendMessage = () => {
-    message.length >= 5 && dispatch(addMessage({
+    message.length >= 0 && dispatch(addMessage({
       order: order,
       message: {
         id: 'message-' + new Date().getMilliseconds(),

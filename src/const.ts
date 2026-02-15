@@ -24,6 +24,8 @@ export enum Roles {
 
 export enum OrderStatuses {
   Created = "Created",
+  Confirmed = "Confirmed",
+  Picking = "Picking",
   Shipping = "Shipped",
   Canceled = "Canceled",
   Delivered = "Delivered",
