@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Order } from "../../types/order"
-import { CompanyItem } from "../CompanyItem/CompanyItem";
+import { ItemWithImage } from "../ItemWithImage/ItemWithImage";
 import { CustomerItem } from "../CustomerItem/CustomerItem";
 import { OrderFull } from "./OrderFull";
+import { ReactComponent as Message } from "../../assets/img/icons/mail.svg"
 
 interface OrderCardProps {
   order: Order;
@@ -15,8 +16,15 @@ export function OrderCard({order, number}: OrderCardProps) {
   return (
     <>
       <div className="order-card" role="button" onClick={(e) => {setOrderOpened(true)}}>
-        <button className="order-card__title">{number}</button>
-        <CompanyItem image={order.company.logo} text={order.company.name}/>
+        <div className="order-card__top">
+          <span className="order-card__title">{number}</span>
+          {
+            order.comment
+            &&
+            <Message title={order.comment}/>
+          }
+        </div>
+        <ItemWithImage image={order.company.logo} text={order.company.name}/>
         <CustomerItem image={order.customer.avatar} text={order.customer.name}/>
       </div>
       {

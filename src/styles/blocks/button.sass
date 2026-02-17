@@ -20,10 +20,18 @@
     background-color: $white
     color: $dark
 
+  &--with-icon
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 10px
+
   &--secondary
     background-color: $white
     color: $dark
-
+    &:focus-visible
+      background-color: $dark
+      color: $white
 .half-button
   display: flex
   padding: 0px 8px

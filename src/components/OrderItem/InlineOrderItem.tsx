@@ -2,7 +2,7 @@ import { Order } from "../../types/order";
 import { CustomCheckbox } from "../CustomCheckbox/CustomCheckbox";
 import { useState } from "react";
 import { OrderFull } from "./OrderFull";
-import { CompanyItem } from "../CompanyItem/CompanyItem";
+import { ItemWithImage } from "../ItemWithImage/ItemWithImage";
 import { CustomerItem } from "../CustomerItem/CustomerItem";
 import { OrderStatus } from "../OrderStatus/OrderStatus";
 
@@ -21,7 +21,7 @@ export function InlineOrderItem({order, number}: OrderItemProps) {
           <CustomCheckbox/>
           <button className="table__column-number">{number}</button>
         </div>
-        <CompanyItem image={order.company.logo} text={order.company.name} />
+        <ItemWithImage image={order.company.logo} text={order.company.name} />
         <CustomerItem image={order.customer.avatar} text={order.customer.name} comment={order.comment}/>
 
         <span className="table__column-name">{order.ordered.toLocaleString().slice(0,-3)}</span>

@@ -1,0 +1,30 @@
+.filters-form
+  &__input
+    display: flex
+    flex-direction: column
+    gap: 16px
+
+  &__category-search
+    width: 100%
+    padding: 16px
+    border-radius: 10px
+    border: none
+    background-color: $light-gray
+    font-size: 18px
+    &::placeholder
+      font-size: 18px
+    &:focus-visible,
+    &:active
+      outline-color: $orange
+
+  &__category-list
+    display: flex
+    flex-direction: column
+    gap: 15px
+    max-height: 280px
+    overflow: scroll
+
+  &__buttons-wrapper
+    display: flex
+    justify-content: space-between
+    width: 100%

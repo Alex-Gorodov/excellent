@@ -50,7 +50,7 @@ export function OrdersPage() {
 
   return (
     <Layout>
-      <div className="section">
+      <div className="section orders">
         <div className="section__header orders__header">
           <h1 className="title">All orders</h1>
           <div className="orders__buttons">

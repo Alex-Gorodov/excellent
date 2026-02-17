@@ -1,7 +1,7 @@
 import { Order } from "../../types/order"
 import { ReactComponent as Close } from "../../assets/img/icons/close.svg";
 import { ReactComponent as Attach } from "../../assets/img/icons/attachment.svg";
-import { CompanyItem } from "../CompanyItem/CompanyItem";
+import { ItemWithImage } from "../ItemWithImage/ItemWithImage";
 import { CustomerItem } from "../CustomerItem/CustomerItem";
 import { OrderStatus } from "../OrderStatus/OrderStatus";
 import { OrderChatMessage } from "../OrderChatMessage/OrderChatMessage";
@@ -29,7 +29,7 @@ export function OrderFull({order, number, onClose}: OrderFullProps) {
 
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, []);
+  });
 
   const sortedChat = [...order.chat].reverse();
 
@@ -47,6 +47,12 @@ export function OrderFull({order, number, onClose}: OrderFullProps) {
     }))
     setMessage('')
   }
+
+  const rawPhone = order.customer.phone;
+
+  const formattedPhone = rawPhone
+    ? rawPhone.replace(/[^\d+]/g, '')
+    : '';
 
   return (
     <div className="order__wrapper" onClick={onClose}>
@@ -74,21 +80,21 @@ export function OrderFull({order, number, onClose}: OrderFullProps) {
               </div>
               {order.products.map((p) => {
                 return (
-                  <div className="product">
-                    <div className="product__name-container">
+                  <div className="order-product">
+                    <div className="order-product__name-container">
                       <img src={p.product.image} alt={p.product.name} width={40} height={40}/>
-                      <p className="product__name-wrapper">
-                        <span className="product__id">{p.product.id}</span>
-                        <span className="product__name">{p.product.name}</span>
+                      <p className="order-product__name-wrapper">
+                        <span className="order-product__id">{p.product.id}</span>
+                        <span className="order-product__name">{p.product.name}</span>
                       </p>
                     </div>
-                    <p className="product__quantity">
+                    <p className="order-product__quantity">
                       {p.quantity} {p.product.unit}
                     </p>
-                    <p className="product__stock">{p.product.stock}</p>
-                    <p className="product__price">${p.product.price} / {p.product.unit}</p>
-                    <p className="product__total-price">${(p.product.price * p.quantity).toFixed(2)}</p>
-                    <p className="product__margin-price">{p.product.marginPrice}%</p>
+                    <p className="order-product__stock">{p.product.stock}</p>
+                    <p className="order-product__price">${p.product.price} / {p.product.unit}</p>
+                    <p className="order-product__total-price">${(p.product.price * p.quantity).toFixed(2)}</p>
+                    <p className="order-product__margin-price">{p.product.marginPrice}%</p>
 
                   </div>
                 )
@@ -125,7 +131,7 @@ export function OrderFull({order, number, onClose}: OrderFullProps) {
           <div className="customer order__table order__table--customer">
             <p className="customer__item-wrapper">
               <span className="customer__item-label">Company</span>
-              <CompanyItem image={order.company.logo} text={order.company.name} />
+              <ItemWithImage image={order.company.logo} text={order.company.name} />
             </p>
             <p className="customer__item-wrapper">
               <span className="customer__item-label">Customer</span>
@@ -137,7 +143,7 @@ export function OrderFull({order, number, onClose}: OrderFullProps) {
             </p>
             <p className="customer__item-wrapper">
               <span className="customer__item-label">Delivery adress</span>
-              <span className="customer__item-value">{order.customer.adress}</span>
+              <address className="customer__item-value">{order.customer.adress}</address>
             </p>
             <p className="customer__item-wrapper">
               <span className="customer__item-label">Delivery date</span>
@@ -159,10 +165,14 @@ export function OrderFull({order, number, onClose}: OrderFullProps) {
                 <span className="customer__item-value">{order.comment}</span>
               </p>
             }
-            <p className="customer__item-wrapper">
-              <span className="customer__item-label">Phone number</span>
-              <span className="customer__item-value">{order.customer.phone || 'No data'}</span>
-            </p>
+            {
+              order.customer.phone
+              &&
+              <p className="customer__item-wrapper">
+                <span className="customer__item-label">Phone number</span>
+                <a href={`tel:${formattedPhone}`} className="customer__item-value">{order.customer.phone}</a>
+              </p>
+            }
             <p className="customer__item-wrapper">
               <span className="customer__item-label">Ordered</span>
               <span className="customer__item-value">{order.ordered.toLocaleDateString()}</span>

@@ -3,7 +3,7 @@ interface ItemProps {
   text: string;
 }
 
-export function CompanyItem({image, text}: ItemProps) {
+export function ItemWithImage({image, text}: ItemProps) {
   return (
     <div style={{
       display: 'flex',

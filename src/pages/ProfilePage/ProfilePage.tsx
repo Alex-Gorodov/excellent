@@ -29,7 +29,7 @@ export function ProfilePage() {
           <h1 className="title">Profile</h1>
           <button className="profile__edit-button button" type={isEditable ? 'submit' : 'button'} onClick={() => setEditable(!isEditable)}>{isEditable ? 'Save' : 'Edit'}</button>
         </div>
-        <div className="section__wrapper">
+        <div className="section__wrapper profile__wrapper">
           <form className="profile__form" action="#" method="POST">
             <div className="profile__image-wrapper">
               <span className="profile__image-label input__label">Your photo</span>

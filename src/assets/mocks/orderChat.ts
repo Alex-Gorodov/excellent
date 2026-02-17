@@ -51,9 +51,6 @@ type Mood = "positive" | "negative";
 
 /* -------------------- helpers -------------------- */
 
-const getRandomUser = () =>
-  users[Math.floor(Math.random() * users.length)];
-
 export function getRandomChatPhrase(role: Role, mood: Mood) {
   const phrases = chatPhrases[role][mood];
   return phrases[Math.floor(Math.random() * phrases.length)];

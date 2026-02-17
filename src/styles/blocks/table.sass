@@ -1,6 +1,8 @@
 .table
   position: relative
   min-width: 0
+  background-color: $white
+  border-radius: 20px
   &__scroll
     overflow-x: auto
     @media (max-width: $tablet-width)
@@ -14,9 +16,12 @@
     justify-content: flex-start
     gap: 12px
     align-items: center
-    border-bottom: 1px solid $border-gray
     transition: 0.3s
     cursor: pointer
+    &--products
+      grid-template-columns: 60px repeat(4, 1fr) 3fr
+    &:not(:nth-last-child(1))
+      border-bottom: 1px solid $border-gray
     &:not(.table__header):hover
       background-color: $medium-gray
     & > *

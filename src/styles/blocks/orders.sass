@@ -1,15 +1,25 @@
 .orders
+  // padding: 25px
+  // overflow: auto
+  padding: 0
   &__wrapper
     overflow-y: scroll
-    padding: 0
+    // padding: 0
+    padding: 25px
     & > *
       min-width: 0
     &--grid
       background-color: transparent
       border-radius: 0
+      // margin-bottom: 20px
+  &:has(.orders__wrapper--grid)
+    // padding-inline: 0
+    // & .order__header
+    //   padding-inline: 0
   &__header
-    margin-top: -20px
+    // margin-top: -20px
     padding-top: 20px
+    padding-inline: 25px
     @media (max-width: $mobile-width)
       align-items: unset
       gap: 20px

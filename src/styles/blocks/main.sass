@@ -1,11 +1,10 @@
 .main
   position: relative
   flex: 1
-  padding: 0 25px
+  // padding: 0 25px
   background-color: $light-gray
   border-radius: 20px
   overflow-x: hidden
   max-height: calc(100dvh - 100px)
-
-  @media (max-width: $mobile-width)
-    padding: 12px
+  &:has(.orders__wrapper--grid)
+    padding: 0

@@ -10,7 +10,9 @@
     display: block
     width: 25px
     height: 25px
+    text-transform: capitalize
     border: 1px solid $black-opacity
+    border-radius: 5px
     transition: 0.3s
     outline: none
     &:hover
@@ -36,3 +38,8 @@
 
   &__input:disabled ~ .checkbox__mark
     opacity: 0.1
+
+  &__label
+    width: 100%
+    margin-left: 36px
+    white-space: nowrap
